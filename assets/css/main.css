@@ -4,8 +4,7 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: 'Space Grotest', sans-serif;
-  font-weight: 500;
-  font-size: 18px;
+body,
+html {
+  font-family: 'Space Grotesk', sans-serif;
 }
