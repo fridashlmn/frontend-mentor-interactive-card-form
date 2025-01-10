@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col mx-24 lg:p-0 lg:pt-20 pt-16 max-w-sm">
+  <div class="flex flex-col w-full xl:ml-10 lg:p-0 lg:pt-20 pt-16 max-w-sm">
     <FormKit
       id="credit-card-form"
       type="form"
@@ -23,6 +23,7 @@
         name="number"
         label="card number"
         placeholder="e.g. 1234 5678 9123 0000"
+        maxlength="16"
         validation="required|number"
         :validation-messages="{
           number: 'Wrong format, numbers only',

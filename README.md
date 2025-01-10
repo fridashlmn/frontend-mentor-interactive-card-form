@@ -1,75 +1,42 @@
-# Nuxt Minimal Starter
+# Frontend Mentor - Interactive card details form solution
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+This is a solution to
+the [Interactive card details form challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/interactive-card-details-form-XpS8cKZDWw).
+Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
-## Setup
+### The challenge
 
-Make sure to install dependencies:
+Users should be able to:
 
-```bash
-# npm
-npm install
+- Fill in the form and see the card details update in real-time
+- Receive error messages when the form is submitted if:
+    - Any input field is empty
+    - The card number, expiry date, or CVC fields are in the wrong format
+- View the optimal layout depending on their device's screen size
+- See hover, active, and focus states for interactive elements on the page
 
-# pnpm
-pnpm install
+### Screenshot
 
-# yarn
-yarn install
+![screenshot](assets/images/preview.png)
 
-# bun
-bun install
-```
+### Links
 
-## Development Server
+- Live Site URL: [https://frontend-mentor-interactive-card-form.netlify.app
+  ](https://frontend-mentor-interactive-card-form.netlify.app
+  )
+- Solution
+  URL: [https://www.frontendmentor.io/solutions/interactive-card-form-with-nuxt-and-formkit-Y5uIZ-L2ph](https://www.frontendmentor.io/solutions/interactive-card-form-with-nuxt-and-formkit-Y5uIZ-L2ph)
 
-Start the development server on `http://localhost:3000`:
+## My process
 
-```bash
-# npm
-npm run dev
+### Built with
 
-# pnpm
-pnpm dev
+- Semantic HTML5 markup
+- CSS custom properties
+- Flexbox
+- Nuxt
+- Tailwind CSS
+- Typescript
+- Formkit
 
-# yarn
-yarn dev
 
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.

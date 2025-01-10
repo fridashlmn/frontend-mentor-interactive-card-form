@@ -1,21 +1,21 @@
-import { defineFormKitConfig } from "@formkit/vue";
-import { rootClasses } from "~/formkit.theme";
-import { en } from "@formkit/i18n";
+import { defineFormKitConfig } from '@formkit/vue'
+import { rootClasses } from '~/formkit.theme'
+import { en } from '@formkit/i18n'
 
 export default defineFormKitConfig({
   locales: { en },
-  locale: "en",
+  locale: 'en',
   config: {
-    rootClasses
+    rootClasses,
   },
   messages: {
     en: {
       ui: {
-        incomplete: ""
+        incomplete: '',
       },
       validation: {
-        required: `Can´t be blank`
-      }
-    }
-  }
-});
+        required: `Can´t be blank`,
+      },
+    },
+  },
+})

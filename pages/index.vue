@@ -1,70 +1,66 @@
 <template>
   <div class="flex lg:flex-row flex-col items-center">
-    <div class="relative z-0 lg:max-w-[50vw]">
+    <div class=" z-0 lg:max-w-[50vw]">
       <div class="lg:w-2/3 w-screen">
         <img
           src="~/assets/images/bg-main-desktop.png"
           alt="background image"
-          class="lg:h-screen h-60 w-screen"
+          class="relative lg:h-screen h-60 w-screen"
         >
       </div>
-      <div>
-        <!--big circle-->
-        <div
-          class="absolute z-30 lg:top-[23%] lg:left-[24%] top-[56%] left-[10%] lg:w-12 lg:h-12 w-7 h-7 bg-white rounded-full"
-        />
-        <!--small circle-->
-        <div
-          class="absolute z-30 lg:top-[24.65%] lg:left-[33%] top-[59%] left-[19%] lg:w-5 lg:h-5 w-3 h-3 bg-transparent border border-white rounded-full"
-        />
-        <img
-          src="~/assets/images/bg-card-front.png"
-          alt="background card front"
-          class="absolute z-20 lg:top-[20%] lg:left-[20%] top-[49.25%] left-[6%] lg:w-[447px] w-[286px] shadow-[0px_39px_60px_0px_rgba(0,_0,_0,_0.1425)]"
-        >
-        <div
-          class="absolute z-20 lg:top-[34%] top-[85%] lg:left-[25%] left-[11%] uppercase text-white tracking-widest font-normal lg:text-2xl text-lg"
-        >
+      <!--big circle-->
+      <div
+        class="absolute z-30 xl:left-[15%] lg:top-[23%] lg:left-[5%] top-[56%] left-[10%] lg:w-12 lg:h-12 w-7 h-7 bg-white rounded-full"
+      />
+      <!--small circle-->
+      <div
+        class="absolute z-30 xl:left-[19%] lg:top-[24.65%] lg:left-[11%] top-[59%] left-[19%] lg:w-5 lg:h-5 w-3 h-3 bg-transparent border border-white rounded-full"
+      />
+      <img
+        src="~/assets/images/bg-card-front.png"
+        alt="background card front"
+        class="absolute z-20 xl:left-[12%] lg:top-[20%] lg:left-[2%] top-[13%] left-[4%] lg:w-[447px] w-[286px] shadow-[0px_39px_60px_0px_rgba(0,_0,_0,_0.1425)]"
+      >
+      <div
+        class="absolute z-20 xl:top-[37%] xl:left-[15%] lg:top-[34%] lg:left-[5%] top-[23%] left-[10%] uppercase text-white tracking-widest font-normal lg:text-2xl text-lg"
+      >
           <span v-if="number">
-            {{ number }}
+            {{ formatNumber(number) }}
           </span>
-          <span v-else>0000 0000 0000 0000</span>
-        </div>
-        <div
-          class="absolute z-20 lg:top-[40%] top-[100%] lg:left-[25%] left-[11%] uppercase text-white tracking-widest font-normal lg:text-[16px] text-[9px]"
-        >
+        <span v-else>0000 0000 0000 0000</span>
+      </div>
+      <div
+        class="absolute z-20 xl:top-[45%] xl:left-[15%] lg:top-[43%] lg:left-[5%] top-[27%] left-[10%] uppercase text-white tracking-widest font-normal lg:text-[16px] text-[9px]"
+      >
           <span v-if="name">
             {{ name }}
           </span>
-          <span v-else>Jane Appleseed</span>
-        </div>
-        <div
-          class="absolute z-20 lg:top-[40%] top-[100%] lg:left-[70%] left-[63%] uppercase text-white tracking-widest font-normal lg:text-[16px] text-[9px]"
-        >
-          <span v-if="month">{{ month }}/</span>
-          <span v-else>00/</span>
-        </div>
-        <div
-          class="absolute z-20 lg:top-[40%] top-[100%] lg:left-[75%] left-[68%] uppercase text-white tracking-widest font-normal lg:text-[16px] text-[9px]"
-        >
+        <span v-else>Jane Appleseed</span>
+      </div>
+      <div
+        class="absolute z-20 xl:top-[45%] lg:top-[43%] lg:left-[37%] top-[27%] left-[75%] uppercase text-white tracking-widest font-normal lg:text-[16px] text-[9px]"
+      >
+        <span v-if="month">{{ month }}/</span>
+        <span v-else>00/</span>
+      </div>
+      <div
+        class="absolute z-20 xl:top-[45%] lg:top-[43%] lg:left-[40%] top-[27%] left-[81%] uppercase text-white tracking-widest font-normal lg:text-[16px] text-[9px]"
+      >
           <span v-if="year">
             {{ year }}
           </span>
-          <span v-else>00</span>
-        </div>
+        <span v-else>00</span>
       </div>
-      <div>
-        <img
-          src="~/assets/images/bg-card-back.png"
-          alt="background card back"
-          class="absolute z-10 lg:top-[50%] lg:left-[34%] top-[12%] left-[25%] lg:w-[447px] w-[286px] shadow-[0px_39px_60px_0px_rgba(0,_0,_0,_0.1425)]"
-        >
-        <div
-          class="absolute z-20 lg:top-[61.5%] top-[41%] lg:left-[85%] left-[80%] tracking-widest font-normal text-white lg:text-[16px] text-[9px]"
-        >
-          <span v-if="cvc">{{ cvc }}</span>
-          <span v-else>000</span>
-        </div>
+      <img
+        src="~/assets/images/bg-card-back.png"
+        alt="background card back"
+        class="absolute z-10 xl:top-[55%] xl:left-[15%] lg:top-[55%] lg:left-[5%] top-[2%] left-[8%] lg:w-[447px] w-[286px] shadow-[0px_39px_60px_0px_rgba(0,_0,_0,_0.1425)]"
+      >
+      <div
+        class="absolute z-20 lg:top-[69%] lg:left-[40%] top-[10%] left-[80%] tracking-widest font-normal text-white lg:text-[16px] text-[9px]"
+      >
+        <span v-if="cvc">{{ cvc }}</span>
+        <span v-else>000</span>
       </div>
     </div>
     <CreditCardForm
@@ -101,13 +97,15 @@
   </div>
 </template>
 <script setup lang="ts">
+import type { WritableComputedRef } from "vue";
+
 const cardholderName = ref<string>();
 const cardHolderNumber = ref<string>();
 const cardMonth = ref<number>();
 const cardYear = ref<number>();
 const cardCvc = ref<number>();
 
-const showSuccessMessage = ref(false);
+const showSuccessMessage = ref<boolean>(false);
 
 const name = computed({
   get(previous) {
@@ -168,6 +166,13 @@ const cvc = computed({
     cardCvc.value = newValue;
   }
 });
+
+function formatNumber(value: string) {
+  return value
+    .replace(/(\d{4})/, "$1 ")
+    .replace(/(\d{4}) (\d{4})/, "$1 $2 ")
+    .replace(/(\d{4}) (\d{4}) (\d{4})/, "$1 $2 $3 ");
+}
 
 function displaySuccessMessage(): void {
   const node = getNode("credit-card-form");
