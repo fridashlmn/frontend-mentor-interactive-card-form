@@ -1,4 +1,4 @@
-/** @type {import('tailwindcss').Config} */
+/** @type {import("tailwindcss").Config} */
 module.exports = {
   content: [
     './components/**/*.{js,vue,ts}',
@@ -24,7 +24,7 @@ module.exports = {
         500: '#8E8593',
         900: '#21092F',
       },
-      error: '#FF5252',
+      red: { 500: '#FF5050', 600: '#FF5252' },
       gradientBlue: '#6448FE',
       gradientViolet: '#600594',
     },

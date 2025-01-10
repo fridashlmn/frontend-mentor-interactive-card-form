@@ -25,18 +25,18 @@ export function rootClasses(
 const classes: Record<string, Record<string, boolean>> = {
   'family:button__input': {
     'appearance-none': true,
-    'font-medium': true,
+    'font-normal': true,
     'rounded-lg': true,
     'outline-none': true,
     'mt-4': true,
     'px-7': true,
     'py-3': true,
     'w-96': true,
+    '[@media(max-width:431px)]:w-[-webkit-fill-available]': true,
     'flex': true,
     'items-center': true,
     'justify-center': true,
-    '!text-sm': true,
-    'text-sm': true,
+    'text-[18px]': true,
     'border': true,
     'bg-violet-900': true,
     'text-white': true,
@@ -109,7 +109,7 @@ const classes: Record<string, Record<string, boolean>> = {
   'form__message': {
     'text-red-600': true,
     'mb-1.5': true,
-    'text-xs': true,
+    'text-[12px]': true,
     'group-[]/summary:text-sm': true,
   },
   'form__messageLink': {
@@ -213,6 +213,6 @@ const globals: Record<string, Record<string, boolean>> = {
   message: {
     'text-red-600': true,
     'mb-1.5': true,
-    'text-xs': true,
+    '!text-[12px]': true,
   },
 }

@@ -1,6 +1,12 @@
 <template>
-  <div class="flex flex-col mx-24 lg:p-0 pt-20 max-w-sm">
-    <FormKit type="form" :actions="false">
+  <div class="flex flex-col mx-24 lg:p-0 lg:pt-20 pt-16 max-w-sm">
+    <FormKit
+      id="credit-card-form"
+      type="form"
+      :config="{ validationVisibility: 'submit' }"
+      :actions="false"
+      @submit="$emit('confirm')"
+    >
       <FormKit
         id="name"
         v-model="cardName"
@@ -8,17 +14,21 @@
         name="name"
         label="cardholder name"
         placeholder="e.g. Jane Appleseed"
+        validation="required"
       />
       <FormKit
         id="number"
         v-model="cardNumber"
-        type="number"
-        number="integer"
+        type="text"
         name="number"
         label="card number"
         placeholder="e.g. 1234 5678 9123 0000"
+        validation="required|number"
+        :validation-messages="{
+          number: 'Wrong format, numbers only',
+        }"
       />
-      <div class="flex items-end">
+      <div class="flex items-baseline">
         <FormKit
           id="month"
           v-model="cardMonth"
@@ -28,6 +38,8 @@
           label="exp. date"
           placeholder="MM"
           inner-class="w-20"
+          validation="required"
+          max="12"
         />
         <FormKit
           id="year"
@@ -39,6 +51,8 @@
           placeholder="YY"
           outer-class="mr-4"
           inner-class="w-20"
+          validation="required"
+          max="99"
         />
         <FormKit
           id="cvc"
@@ -49,22 +63,19 @@
           label="cvc"
           placeholder="e.g. 123"
           inner-class="w-48"
+          validation="required"
+          max="999"
         />
       </div>
       <FormKit type="submit" label="Submit" />
     </FormKit>
   </div>
 </template>
-
 <script setup lang="ts">
-const cardName = defineModel('cardName', { required: true })
-const cardNumber = defineModel('cardNumber', { required: true })
-const cardMonth = defineModel('cardMonth', { required: true })
-const cardYear = defineModel('cardYear', { required: true })
-const cardCvc = defineModel('cardCvc', { required: true })
-</script>
-<script lang="ts">
-export default {
-  name: 'CreditCardForm',
-}
+defineEmits(["confirm"]);
+const cardName = defineModel<string>("cardName");
+const cardNumber = defineModel<string>("cardNumber");
+const cardMonth = defineModel<number>("cardMonth");
+const cardYear = defineModel<number>("cardYear");
+const cardCvc = defineModel<number>("cardCvc");
 </script>
